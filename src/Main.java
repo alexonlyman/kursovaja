@@ -12,7 +12,11 @@ public class Main {
         employees [7] = new Employee(" Владимир ", "Сомов", " Михайлович ", 3, 653256);
         employees [8] = new Employee(" Арина ", "Чистякова ", " Никитична ", 1, 435613);
         employees [9] = new Employee(" Михаил ", "Щукин", " Матвеевич ", 3, 452564);
-        Employee.printNames(employees);
+        System.out.println("месячная " + Methods.calculateSalaryByMonths(employees));
+        Methods.printEmployees(employees);
+        System.out.println("максимальная " + Methods.findMaxSalary(employees));
+        Methods.printNames(employees);
+
 
 
     }

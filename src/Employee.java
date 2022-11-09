@@ -10,7 +10,7 @@ public class Employee {
     public int id = 0;
 
 
-    public static Employee[] employees = new Employee[10];
+
 
 
     public Employee(String name, String surname, String middleName, int devision, int salary) {
@@ -23,63 +23,9 @@ public class Employee {
         count++;
     }
 
-    public static void printEmployees() {
-        for (Employee employee : employees)
-            System.out.println(employee);
-    }
 
-    public static int calculateSalaryByMonths() {
-        int sum = 0;
-        for (Employee employee : employees) {
-            sum += employee.getSalary();
-        }
 
-        return sum;
-    }
-    public static Employee findMaxSalary() {
-        Employee search = employees[0];
-        int maxSalary = employees[0].getSalary();
-        for (Employee employee : employees) {
-            if (employee.getSalary() > maxSalary) {
-                maxSalary = employee.getSalary();
-                search = employee;
-            }
-        }
 
-        return search;
-    }
-    public static Employee findMinSalary() {
-        Employee search = employees[0];
-        int minSalary = employees[0].getSalary();
-        for (Employee employee : employees) {
-            if (employee.getSalary() < minSalary) {
-                minSalary = employee.getSalary();
-                search = employee;
-            }
-        }
-
-        return search;
-    }
-    public static int findAverageSalary() {
-        int sum = 0;
-        int average = 0;
-        for (Employee employee : employees) {
-            sum = sum + employee.getSalary();
-            average = sum / employees.length;
-
-        }
-        return average;
-
-    }
-
-    public static void printNames(Employee[] employees) {
-        for (Employee employee : Employee.employees) {
-            System.out.println(employee.getName());
-            System.out.println(employee.getMiddleName());
-            System.out.println(employee.getSurname());
-        }
-
-    }
 
 
     public String toString() {
