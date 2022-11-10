@@ -10,9 +10,6 @@ public class Employee {
     public int id = 0;
 
 
-
-
-
     public Employee(String name, String surname, String middleName, int devision, int salary) {
         this.name = name;
         this.surname = surname;
@@ -23,34 +20,6 @@ public class Employee {
         count++;
     }
 
-
-
-
-
-
-    public String toString() {
-        return " Имя: " + name
-                + " ,фамилия:" + surname
-                + " ,Отчество: " + middleName
-                + " ,отдел № : " + devision
-                + " ,зарплата: " + salary
-                + " ,персональный Id " + id;}
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Employee employee = (Employee) o;
-        return getDevision() == employee.getDevision() && getSalary() == employee.getSalary()
-                && id == employee.id && Objects.equals(getName(), employee.getName())
-                && Objects.equals(getSurname(), employee.getSurname())
-                && Objects.equals(getMiddleName(), employee.getMiddleName());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getName(), getSurname(), getMiddleName(), getDevision(), getSalary(), id);
-    }
 
     public String getName() {
         return name;
@@ -78,5 +47,30 @@ public class Employee {
 
     public void setDevision(int devision) {
         this.devision = devision;
+    }
+
+    public String toString() {
+        return " Имя: " + name
+                + " ,фамилия:" + surname
+                + " ,Отчество: " + middleName
+                + " ,отдел № : " + devision
+                + " ,зарплата: " + salary
+                + " ,персональный Id " + id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return getDevision() == employee.getDevision() && getSalary() == employee.getSalary()
+                && id == employee.id && Objects.equals(getName(), employee.getName())
+                && Objects.equals(getSurname(), employee.getSurname())
+                && Objects.equals(getMiddleName(), employee.getMiddleName());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getName(), getSurname(), getMiddleName(), getDevision(), getSalary(), id);
     }
 }
